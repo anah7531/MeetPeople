@@ -1,5 +1,6 @@
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import AccueilMembre from './components/AccueilMembre';
+import CreerCompte from "./components/CreerCompte";
 
 export function App(){
 
@@ -9,7 +10,7 @@ export function App(){
           <div className='main'>
            
             <Routes>
-                 <Route path='/' element={ <AccueilMembre
+                 <Route path='/' element={ <CreerCompte
                                            />}>  
      
                </Route> 
