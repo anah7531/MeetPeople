@@ -10,19 +10,19 @@ USE meetpeopleDB;
 
 /* Création des tables */
 create table SituationFamiliale (
-idSituationFamiliale int IDENTITY,
+idSituationFamiliale int auto_increment,
 description varchar(50) not null,
 constraint PK_SituationFamiliale primary key (idSituationFamiliale)
 );
 
 CREATE TABLE Interet (
-idInteret int IDENTITY,
+idInteret int auto_increment,
 description varchar(50) not null,
 constraint PK_Interet primary key(idInteret)
 );
 
 CREATE TABLE Admin (
-numeroEmploye int IDENTITY,
+numeroEmploye int auto_increment,
 courriel varchar(40) not null,
 nom varchar(40) not null,
 prenom varchar(40) not null,
@@ -32,7 +32,7 @@ constraint UNQ_Admin_courriel unique(courriel)
 );
 
 CREATE TABLE Membre (
-idMembre int IDENTITY,
+idMembre int auto_increment,
 courriel varchar(40) not null,
 nom varchar(40) not null,
 prenom varchar(40) not null,
@@ -55,7 +55,7 @@ constraint FK_Membre_numeroAdminDesactive foreign key(numeroAdminDesactive) refe
 );
 
 CREATE TABLE Photo (
-idPhoto int IDENTITY,
+idPhoto int auto_increment,
 cheminURL varchar(200) not null,
 estPhotoProfil bit not null default 0,
 idMembre int not null,
@@ -65,7 +65,7 @@ constraint FK_Photo_idMembre foreign key(idMembre) references Membre(idMembre)
 
 
 CREATE TABLE Message (
-idMessage int IDENTITY,
+idMessage int auto_increment,
 contenu varchar(255) not null,
 dateMessage date not null,
 idMembreExpediteur int not null,
@@ -76,7 +76,7 @@ constraint FK_Message_idMembreRecevant foreign key(idMembreRecevant) references 
 );
 
 CREATE TABLE Evaluation (
-idEvaluation int IDENTITY,
+idEvaluation int auto_increment,
 note int not null,
 description varchar(100) not null,
 date date not null,
@@ -101,7 +101,7 @@ constraint FK_MatchTable_idMembreSecond foreign key(idMembreSecond) references M
 );
 
 CREATE TABLE Plainte (
-idPlainte int IDENTITY,
+idPlainte int auto_increment,
 contenu varchar(255) not null,
 date date not null,
 numeroEmploye int,
