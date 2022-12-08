@@ -5,7 +5,9 @@ import logo from "../img/LogoMeetPeople.png"
 import { useForm } from 'react-hook-form'
 import { yupResolver } from '@hookform/resolvers/yup';
 import * as yup from "yup";
+import axios from "axios";
 
+//Validation des champs avec la librairie @hookform/resolvers/yup
 const schema = yup.object({
     nom: yup.string().required("Le nom est obligatoire"),
     prenom: yup.string().required("Le prenom est obligatoire"),
@@ -32,8 +34,30 @@ const CreerCompte = () => {
         {resolver: yupResolver(schema)}
     );
 
-    const customSubmit = (data) => {
-        console.log(data);
+    const postData = (data) => {
+      const membre ={
+        courriel: data.courriel,
+        nom: data.nom,
+        prenom: data.prenom,
+        motDePasse: data.motDePasse,
+        estActif: 1,
+        detailProfil: "Ecrire une description de toi",
+        sexe: data.sexe,
+        grandeur: data.grandeur,
+        dateDeNaissance: data.dateDeNaissance,
+        estVerifie: 0,
+        idSituationFamiliale: data.situationFamiliale,
+        idInteret: data.interet,
+        numeroAdminDesactive: null
+      }
+      
+      /* axios.POST("http://localhost8080/auth/register", membre)
+      .then(response => {
+        if(response.data != null){
+          console.log(membre);
+          alert("Vous êtes enregistré")
+        }
+      }) */
     }
 
     return (
@@ -51,7 +75,7 @@ const CreerCompte = () => {
             </div>
 
             <div className="container">
-                <form onSubmit={ handleSubmit(customSubmit) }>
+                <form onSubmit={ handleSubmit(postData) }>
                     <div className="row">
                         <div className="col">
                             <label>Nom</label><br/>
@@ -110,12 +134,12 @@ const CreerCompte = () => {
                     <div className="row">
                         <div className="col">
                             <label>Mot de passe</label>
-                            <input type="text" className="form-control" {...register('motDePasse', { required:true})}/>
+                            <input type="password" className="form-control" {...register('motDePasse', { required:true})}/>
                             <small className="text-danger">{errors.motDePasse?.message}</small>
                         </div>
                         <div className="col">
                             <label>Confirmer le mot de passe</label>
-                            <input type="text" className="form-control" {...register('motDePasseConfirme')} errorMe/>
+                            <input type="password" className="form-control" {...register('motDePasseConfirme')} errorMe/>
                             <small className="text-danger">{errors.motDePasseConfirme?.message}</small><br/>
                         </div>
                     </div>
