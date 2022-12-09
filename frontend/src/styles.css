@@ -9,3 +9,7 @@
 .colorBtn{
     background-color: #925FF0;
 }
+
+.colorBtn:hover{
+    background-color: #5d10ed;
+}
