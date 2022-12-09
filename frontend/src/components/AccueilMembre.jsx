@@ -24,8 +24,8 @@ const AccueilMembre = () => {
       </Typography>
     </CardContent>
     <CardActions>
-      <Button size="small">J'aime pas</Button>
-      <Button size="small">J'aime</Button>
+      <Button size="small" onClick={()=> alert('Prochaine personne!')}>J'aime pas</Button>
+      <Button size="small" onClick={()=> alert('Aime envoyer!')}>J'aime</Button>
     </CardActions>
   </Card>
   )
