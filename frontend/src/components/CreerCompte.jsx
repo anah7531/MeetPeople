@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import "bootstrap/dist/css/bootstrap.min.css";
 import "../styles.css";
 import logo from "../img/LogoMeetPeople.png"
@@ -35,29 +35,30 @@ const CreerCompte = () => {
     );
 
     const postData = (data) => {
-      const membre ={
-        courriel: data.courriel,
-        nom: data.nom,
-        prenom: data.prenom,
-        motDePasse: data.motDePasse,
-        estActif: 1,
-        detailProfil: "Ecrire une description de toi",
-        sexe: data.sexe,
-        grandeur: data.grandeur,
-        dateDeNaissance: data.dateDeNaissance,
-        estVerifie: 0,
-        idSituationFamiliale: data.situationFamiliale,
-        idInteret: data.interet,
-        numeroAdminDesactive: null
-      }
-      
-      /* axios.POST("http://localhost8080/auth/register", membre)
-      .then(response => {
+
+        const membre ={
+            courriel: data.courriel,
+            nom: data.nom,
+            prenom: data.prenom,
+            motDePasse: data.motDePasse,
+            estActif: 1,
+            detailProfil: "Ecrire une description de toi",
+            sexe: data.sexe,
+            grandeur: data.grandeur,
+            dateDeNaissance: data.dateDeNaissance,
+            estVerifie: 0,
+            idSituationFamiliale: data.situationFamiliale,
+            idInteret: data.interet,
+            numeroAdminDesactive: null
+        }
+
+       axios.post("http://localhost:8080/auth/register", membre)
+        .then(response => {
         if(response.data != null){
           console.log(membre);
           alert("Vous êtes enregistré")
         }
-      }) */
+      })
     }
 
     return (
