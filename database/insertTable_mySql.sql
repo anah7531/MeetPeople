@@ -21,15 +21,23 @@ insert into Membre values
 (3,'juana@gmail.com','Gomez','Juana','juanita43',1,'Bonjour je m''appelle Juana','F',170,'1994-04-19',1,1,1,null),
 (4,'alexandra@gmail.com','Paris','Alexandra','paris22',1,'I like cooking','F',178,'1990-09-05',0,1,3,null),
 (5,'salma@gmail.com','Hayek','Salma','salmahayek',1,'Je suis une actrice','F',180,'1993-10-25',0,1,4,null),
-(6,'mark@gmail.com','Rousseau','Mark','1239123',0,'Im new here!','H',168,'1990-03-27',0,2,2,1);
+(6,'mark@gmail.com','Rousseau','Mark','1239123',0,'Im new here!','H',168,'1990-03-27',0,2,2,1),
+(7,'kevin@gmail.com','Hart','Kevin','kevin123',1,'Hi. I am Kevin Hart','H',169,'1987-02-17',1,2,3,null),
+(8,'therock@gmail.com','Johnson','Dwayne','therock123',1,'Hi. I am TheRock','H', 190,'1980-10-24',1,1,1,null),
+(9,'megan@gmail.com','Markle','Meghan','meghan123',1,'I am meghan Markle','F',170,'1988-12-23',0,2,3,null),
+(10,'ayesha@gmail.com','Curry','Ayesha','ayesha123',1,'I am Ayesha.','F',159,'1985-09-17',0,2,4,null);
 
 insert into Photo values
-(1,'photo pas disponible',1,1),
-(2,'photo pas disponible',1,2),
-(3,'photo pas disponible',1,3),
-(4,'photo pas disponible',1,4),
-(5,'photo pas disponible',1,5),
-(6,'photo pas disponible',1,6);
+(1,'https://i.scdn.co/image/b44233e2dbf524e3f895130a0c9c7281cef6199b',1,1),
+(2,'https://www.cinemapolitica.org/wp-content/uploads/2020/03/Real_Junior_Leblanc.jpg',1,2),
+(3,'https://www.iheartradio.ca/image/policy:1.18142620:1656988671/selena.jpg?f=default&$p$f=c059210',1,3),
+(4,'https://fr.news24viral.com/wp-content/uploads/2022/10/Ce-que-vous-ne-savez-pas-sur-Alexandra-Daddario.jpg',1,4),
+(5,'https://flxt.tmsimg.com/assets/71233_v9_bc.jpg',1,5),
+(6,'https://remax-aphotos-oa.imgix.net/Share/AssociatePhotos/70021964.jpg',1,6),
+(7,'https://images.discovery-prod.axs.com/2022/01/kevin-hart_01-11-22_19_61dde1c0b4d2f.jpg?1668384000108',1,7),
+(8,'https://www.gannett-cdn.com/presto/2022/07/21/USAT/0ba6d19c-537a-41b0-b467-fc0c9434ce66-Rock_Scowl.jpg?width=1200&disable=upscale&format=pjpg&auto=webp',1,8),
+(9,'https://hips.hearstapps.com/ghk.h-cdn.co/assets/18/10/1520625898-meghan-markle-deal-or-no-deal.jpg?crop=1.00xw:0.667xh;0,0.0403xh&resize=480:*',1,9),
+(10,'https://pyxis.nymag.com/v1/imgs/2f7/4be/9ddec36996ebcea2a389ad5c8a4272a33a-18-ayesha-curry.rsquare.w700.jpg',1,10);
 
 insert into Message values
 (1,'Allo','2022-10-17',1,2),

@@ -18,7 +18,7 @@ public class Membre {
     private String motDePasse;
 
     @Column(name = "estActif", columnDefinition="BIT")
-    private boolean estActif;
+    private boolean estActif = true;
 
     private String detailProfil;
     private String sexe;
