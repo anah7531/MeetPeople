@@ -2,7 +2,7 @@ package com.meetPeople.controller;
 
 
 import com.meetPeople.repository.MembreRepository;
-import com.meetPeople.models.Membre;
+import com.meetPeople.entity.Membre;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
@@ -17,10 +17,6 @@ public class MembreController {
     @Autowired
     MembreRepository membreRepository;
 
-    @GetMapping()
-    public List<Membre> index(){
-        return membreRepository.findAll();
-    }
 
     @GetMapping("{id}")
     public Optional<Membre> show(@PathVariable int id){

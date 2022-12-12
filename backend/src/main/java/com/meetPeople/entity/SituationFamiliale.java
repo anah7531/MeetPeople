@@ -1,4 +1,4 @@
-package com.meetPeople.models;
+package com.meetPeople.entity;
 
 import jakarta.persistence.*;
 
