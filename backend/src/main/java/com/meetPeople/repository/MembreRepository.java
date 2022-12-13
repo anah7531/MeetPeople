@@ -12,8 +12,8 @@ public interface MembreRepository extends JpaRepository<Membre, Integer> {
             nativeQuery = true,
             value =
                     "select membre.idMembre " +
-                            "from membre " +
-                            "where idMembre not in :listOfId"
+                    "from membre " +
+                    "where idMembre not in :listOfId"
     )
     List<Integer> getAvailableProfileIds(List<Integer> listOfId);
 
