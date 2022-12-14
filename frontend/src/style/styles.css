@@ -13,3 +13,31 @@
 .colorBtn:hover{
     background-color: #5d10ed;
 }
+
+.fontDate{
+    font-size: 12px;
+    font-style: italic;
+}
+
+.floatRight{
+    display: flex;
+    justify-content: flex-end;
+}
+
+.floatLeft{
+    display: flex;
+    justify-content: flex-start;
+}
+
+.chatExpediteur{
+    background-color: #EBF6FF;
+}
+
+.chatRecevant{
+    background-color: #FFEEF0;
+}
+
+.boiteChat{
+    height: auto;
+    max-width: 400px;
+}
