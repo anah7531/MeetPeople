@@ -91,9 +91,9 @@ constraint FK_Evaluation_idMembreEvalue foreign key(idMembreEvalue) references M
 CREATE TABLE MatchTable (
 idMembreInitiateur int,
 idMembreSecond int,
-estAimerParInitiateur bit not null,
+estAimerParInitiateur bit,
 estAimerParSecond bit,
-dateInitiateur date not null,
+dateInitiateur date,
 dateSecond date,
 constraint PK_MatchTable primary key(idMembreInitiateur, idMembreSecond),
 constraint FK_MatchTable_idMembreInitiateur foreign key(idMembreInitiateur) references Membre(idMembre),
