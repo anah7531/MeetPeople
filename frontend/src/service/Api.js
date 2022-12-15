@@ -21,6 +21,10 @@ export class Api{
         return fetch(this.BASE_URL + "/match/" + id)
     }
 
+    static getAvailableProfile(id){
+        return fetch(this.BASE_URL + "/profile/availableProfile/" + id)
+    }
+
     static getConversation(myId, userId){
         return fetch(this.BASE_URL + `/message/${myId}/${userId}`)
     }

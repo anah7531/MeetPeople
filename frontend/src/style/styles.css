@@ -1,5 +1,25 @@
+/* Styles pour notre App MeetPeople */
+
+/* Couleurs mauves pour notre app */
+
 .color1{
     background-color: #F4EFFD;
+}
+
+.color-next{
+    background-color: #39A5C8;
+}
+
+.color-next:hover{
+    background-color: #39A5C8;
+}
+
+.color-like{
+    background-color: #4DC839;
+}
+
+.color-like:hover{
+    background-color: #4DC839;
 }
 
 .colorlettre{
@@ -68,3 +88,60 @@
 .fs-7{
     font-size: 0.8rem;
 }
+
+/* Styles pour le Navbar */
+
+.link-hover{
+    color:black;
+}
+
+.link-hover:hover{
+    color: #caadff;
+}
+
+.btnDeconnecter{
+    display: inline;
+    border: none;
+    font-size: 12px;
+    float: right;
+}
+
+.ulStyle{
+    list-style-type: none;
+    display: inline;
+    padding: 0;
+}
+
+.liStyle{
+    display: inline;
+}
+
+/* CARTE PROFILE */
+
+.upper-container {
+    height: 6rem;
+    background: linear-gradient(to left, rgba(12, 212, 212, 0.993), rgb(175, 252, 255));
+}
+
+
+.avatar {
+    background: white;
+    width: 10rem;
+    height: 10rem;
+    border-radius: 50%;
+    padding: 5px;
+    border: 2px solid #c3f6ff;
+}
+
+.lower-container {
+    margin-top: 5rem;
+}
+
+
+
+/* NAVIGATION */
+.logo {
+    height: 25px;
+    width: 25px;
+}
+
