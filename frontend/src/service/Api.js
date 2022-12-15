@@ -17,4 +17,16 @@ export class Api{
         return fetch(this.BASE_URL + "/auth/register", postOption(data))
     }
 
+    static getMatchsById(id){
+        return fetch(this.BASE_URL + "/match/" + id)
+    }
+
+    static getConversation(myId, userId){
+        return fetch(this.BASE_URL + `/message/${myId}/${userId}`)
+    }
+
+    static sendMessage(data){
+        return fetch(this.BASE_URL + "/message", postOption(data))
+    }
+
 }

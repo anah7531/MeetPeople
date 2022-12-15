@@ -1,6 +1,7 @@
 package com.meetPeople.controller;
 
 import com.meetPeople.entity.Message;
+import com.meetPeople.model.Conversation;
 import com.meetPeople.services.MatchService;
 import com.meetPeople.services.MessageService;
 import jakarta.websocket.server.PathParam;
@@ -19,12 +20,12 @@ public class MessageController {
 
 
     @PostMapping()
-    public boolean saveMessage(@RequestBody Message message){
+    public Message saveMessage(@RequestBody Message message){
         return messageService.saveMessage(message);
     }
 
     @GetMapping("/{id}/{userId}")
-    public List<Message> getConversation(@PathVariable int id, @PathVariable int userId){
+    public Conversation getConversation(@PathVariable int id, @PathVariable int userId){
         return messageService.getConversation(id, userId);
     }
 }

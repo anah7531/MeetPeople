@@ -13,3 +13,58 @@
 .colorBtn:hover{
     background-color: #5d10ed;
 }
+
+.fontDate{
+    font-size: 12px;
+    font-style: italic;
+}
+
+.floatRight{
+    display: flex;
+    justify-content: flex-end;
+}
+
+.floatLeft{
+    display: flex;
+    justify-content: flex-start;
+}
+
+.chatExpediteur{
+    background-color: #EBF6FF;
+}
+
+.chatRecevant{
+    background-color: #FFEEF0;
+}
+
+.boiteChat{
+    max-width: 50%;
+}
+
+.messageContainer{
+    height: 60vh;
+}
+
+.img{
+    object-fit: cover;
+}
+
+.img-small{
+    width: 5rem;
+    height: 5rem;
+}
+
+.img-medium{
+    width: 7rem;
+    height: 7rem;
+}
+
+.icon-small{
+    width: 2rem;
+    height: 2rem;
+    object-fit: contain;
+}
+
+.fs-7{
+    font-size: 0.8rem;
+}

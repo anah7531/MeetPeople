@@ -5,11 +5,16 @@ import { AuthLayout } from './layouts/auth/AuthLayout';
 import CreerCompte from './pages/CreerCompte/CreerCompte';
 import { MainLayout } from './layouts/main/MainLayout';
 import AccueilMembre from './pages/AcceuilMembre.jsx/AccueilMembre';
+import Conversation from './pages/conversation/Conversation';
+import Matchs from './pages/Matchs/Matchs';
+import { Provider } from 'react-redux';
+import { store } from './redux/store';
 
 export function App(){
 
   return (
-    <Router>
+    <Provider store={store}>
+      <Router>
         <Routes>
           
           <Route element={<AuthLayout />}>
@@ -18,8 +23,12 @@ export function App(){
 
           <Route element={<MainLayout />}>
             <Route path='/' element={<AccueilMembre />} />
+            <Route path='/matchs' element={<Matchs />} />
+            <Route path='/message/:id' element={<Conversation />} />
           </Route> 
         </Routes>
-    </Router>
+      </Router>
+    </Provider>
+
   )
 }
