@@ -58,10 +58,9 @@ public interface MatchTableRepository extends JpaRepository<MatchTable, MatchTab
                             "        END, " +
                             "     dateInitiateur = " +
                             "        CASE " +
-                            "        WHEN dateInitiateur <> CURRENT_DATE() " +
-                            "        THEN CURRENT_DATE() " +
                             "        WHEN dateInitiateur IS NULL " +
                             "        THEN CURRENT_DATE()" +
+                            "        ELSE CURRENT_DATE()" +
                             "        END " +
                             "WHERE idMembreInitiateur = :idMembreInitiateur " +
                             "AND IdMembreSecond = :IdMembreSecond "
@@ -86,10 +85,9 @@ public interface MatchTableRepository extends JpaRepository<MatchTable, MatchTab
                             "        END, " +
                             "     dateSecond = " +
                             "        CASE " +
-                            "        WHEN dateSecond <> CURRENT_DATE() " +
-                            "        THEN CURRENT_DATE() " +
                             "        WHEN dateSecond IS NULL " +
                             "        THEN CURRENT_DATE()" +
+                            "        ELSE CURRENT_DATE()" +
                             "        END " +
                             "WHERE idMembreInitiateur = :IdMembreSecond " +
                             "AND IdMembreSecond = :idMembreInitiateur"

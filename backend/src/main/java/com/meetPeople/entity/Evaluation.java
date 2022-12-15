@@ -6,19 +6,18 @@ import lombok.NoArgsConstructor;
 import java.util.Date;
 
 @Entity
-@Table(name = "Plainte")
+@Table(name = "evaluation")
 @Data
 @NoArgsConstructor
-public class Plainte {
+public class Evaluation {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private int idPlainte;
-    private String contenu;
+    private int idEvaluation;
+    private int note;
+    private String description;
     private Date date;
-    private Integer numeroEmploye;
-    private int idMembrePlaignant;
-    private int idMembreConcerner;
-
+    private int idMembreEvaluateur;
+    private int idMembreEvalue;
 
 }
