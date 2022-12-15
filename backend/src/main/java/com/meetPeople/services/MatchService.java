@@ -50,7 +50,6 @@ public class MatchService {
 
         } else {
 
-
             //list have record -> records found -> Update 2 rows
             if(matchTableRepository.updateMatchInitiateur(idMembreInitiateur, idMembreSecond, estAimerParInitiateur) == 1 &&
                     matchTableRepository.updateMatchSecond(idMembreInitiateur, idMembreSecond, estAimerParInitiateur) == 1  )

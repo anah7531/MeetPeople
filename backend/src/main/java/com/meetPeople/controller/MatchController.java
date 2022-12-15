@@ -21,7 +21,6 @@ public class MatchController {
         return matchService.getMyMatches(id);
     }
 
-    
     @PostMapping("/onClickForLikeOrNot/{idMembreInitiateur}/{idMembreSecond}/{estAimerParInitiateur}")
     public Integer onClickForLikeOrNot(@PathVariable int idMembreInitiateur,@PathVariable int idMembreSecond, @PathVariable Boolean estAimerParInitiateur){
         return matchService.onClickForLikeOrNot(idMembreInitiateur,idMembreSecond, estAimerParInitiateur);
