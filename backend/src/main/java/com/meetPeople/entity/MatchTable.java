@@ -19,7 +19,7 @@ public class MatchTable {
     private int idMembreInitiateur;
     @Id
     private int IdMembreSecond;
-    private boolean estAimerParInitiateur;
+    private Boolean estAimerParInitiateur;
     private Boolean estAimerParSecond;
     private Date dateInitiateur;
     private Date dateSecond;
