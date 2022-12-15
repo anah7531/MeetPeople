@@ -70,6 +70,7 @@ public interface MatchTableRepository extends JpaRepository<MatchTable, MatchTab
     )
     Integer updateMatchInitiateur(int idMembreInitiateur, int IdMembreSecond, Boolean estAimerParInitiateur);
 
+
     @Transactional
     @Modifying
     @Query(
@@ -96,6 +97,7 @@ public interface MatchTableRepository extends JpaRepository<MatchTable, MatchTab
 
     )
     Integer updateMatchSecond(int idMembreInitiateur, int IdMembreSecond, Boolean estAimerParInitiateur);
+
 
     @Transactional
     @Modifying
