@@ -39,6 +39,7 @@ public class MatchService {
         return match1 != null && match1.getEstAimerParInitiateur() && match1.getEstAimerParSecond();
     }
 
+
     //returns 2 if the records are inserted and returns 1 if there was an update
     public  Integer onClickForLikeOrNot(int idMembreInitiateur, int idMembreSecond, Boolean estAimerParInitiateur){
 
