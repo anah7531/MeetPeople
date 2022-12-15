@@ -1,15 +1,21 @@
+import { Link } from "react-router-dom";
 import logo from "../../img/LogoMeetPeople.png"
 
 export function MainNavBar(){
 
     return(
-        <nav className=" color1 p-2 rounded-5">
-            <img src={logo} className="ms-3" width="30px" alt="" />
-            <span className="ms-2"><b>MeetPeople</b></span>
-            <span className="ms-5"><a href="" className="text-decoration-none">Accueil</a></span>
-            <span className="ms-4"><a href="" className="text-decoration-none">Mon profil</a></span>
-            <span className="ms-4"><a href="" className="text-decoration-none">Messages</a></span>
-            <span className="ms-4"><a href="" className="text-decoration-none">Matchs</a></span>
+        <nav className="color1 p-2 rounded-5">
+            <ul className="ulStyle">
+                <li className="liStyle">
+                    <Link to='/accueil'><img src={logo} className="ms-3" width="30px" alt="" /></Link>
+                    <Link to='/accueil' className="ms-2 text-decoration-none text-black d-none d-md-inline"><b>MeetPeople</b></Link>
+                </li>
+                <li className="liStyle"><Link to='/accueil' className="ms-4 text-decoration-none link-hover d-none d-md-inline">Accueil</Link></li>
+                <li className="liStyle"><Link className="ms-4 text-decoration-none link-hover">Mon profil</Link></li>
+                <li className="liStyle"><Link className="ms-4 text-decoration-none link-hover">Messages</Link></li>
+                <li className="liStyle"><Link to='/matchs' className="ms-4 text-decoration-none link-hover">Matchs</Link></li>
+            </ul>
+            <button className="btn colorBtn rounded-5 text-white btnDeconnecter">Me déconnecter</button>
         </nav>
     )
 }

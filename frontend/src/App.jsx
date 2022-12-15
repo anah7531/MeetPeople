@@ -7,6 +7,7 @@ import { MainLayout } from './layouts/main/MainLayout';
 import AccueilMembre from './pages/AcceuilMembre.jsx/AccueilMembre';
 import Matchs from './pages/Matchs';
 import Conversation from './pages/Conversation';
+import SignalerProfil from './pages/SignalerProfil';
 
 export function App(){
 
@@ -19,6 +20,8 @@ export function App(){
           </Route>
 
           <Route element={<MainLayout />}>
+            <Route path='/signalerprofil' element={<SignalerProfil />} />
+            <Route path='/accueil' element={<AccueilMembre />} />
             <Route path='/conversation' element={<Conversation />} />
             <Route path='/matchs' element={<Matchs />} />
             <Route path='/' element={<AccueilMembre />} />

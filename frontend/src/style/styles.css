@@ -1,3 +1,7 @@
+/* Styles pour notre App MeetPeople */
+
+/* Couleurs mauves pour notre app */
+
 .color1{
     background-color: #F4EFFD;
 }
@@ -13,6 +17,8 @@
 .colorBtn:hover{
     background-color: #5d10ed;
 }
+
+/* Styles pour le chat (Page conversation) */
 
 .fontDate{
     font-size: 12px;
@@ -40,4 +46,31 @@
 .boiteChat{
     height: auto;
     max-width: 400px;
+}
+
+/* Styles pour le Navbar */
+
+.link-hover{
+    color:black;
+}
+
+.link-hover:hover{
+    color: #caadff;
+}
+
+.btnDeconnecter{
+    display: inline;
+    border: none;
+    font-size: 12px;
+    float: right;
+}
+
+.ulStyle{
+    list-style-type: none;
+    display: inline;
+    padding: 0;
+}
+
+.liStyle{
+    display: inline;
 }
