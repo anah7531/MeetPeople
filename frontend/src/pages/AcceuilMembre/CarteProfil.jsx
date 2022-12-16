@@ -25,7 +25,7 @@ function CarteProfil({profile}) {
     }
 
     return (
-    <div className='col-6 card pb-5 px-0 rounded-top'>     
+    <div className='col-5 card pb-5 px-0 rounded-top'>     
         <div className='upper-container text-center pt-2 rounded-top '>
                 <img src={profile.photoProfil} className="avatar img" alt="photo profil" />
         </div>

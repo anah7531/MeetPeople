@@ -1,6 +1,7 @@
 import { useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { acceuilSliceAsync } from '../../redux/acceuilSlice/acceuilSliceAsync';
+import { AccueilVide } from './AccueilVide';
 import CarteProfil from './CarteProfil';
 
 const AccueilMembre = () => {
@@ -11,7 +12,7 @@ const AccueilMembre = () => {
 
   const show = ()=>{
     if(profiles.length === 0)
-      return "aucun profile"
+      return <AccueilVide/>
 
     return <CarteProfil profile={profiles[0]} />
   }

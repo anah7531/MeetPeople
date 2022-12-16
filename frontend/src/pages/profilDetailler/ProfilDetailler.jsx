@@ -25,7 +25,7 @@ const ProfilDetailler = () => {
           <div className='fs-4'>{profile.prenom + " " + profile.nom}</div>
           <div><b>Sexe : </b>{util.getSexeValue(profile.sexe)}</div>
           <div><b>Âge : </b>{util.formatToAge(profile.dateDeNaissance)} ans</div>
-          <div><b>Taille : </b>{profile.grandeur} cm</div>
+          <div><b>Taille : </b>178 cm</div>
           <div><b>Situation familiale : </b>A des enfants</div>
           <div><b>Recherche : </b>Relation sérieuse</div>
           
@@ -44,10 +44,10 @@ const ProfilDetailler = () => {
 
       <div className='row py-4'>
         <div className='col-8'>
-          <h5>À propos de moi</h5>
+          {/* <h5>À propos de moi</h5>
           <p>
             Lorem ipsum dolor sit amet consectetur adipisicing elit. Quos culpa, debitis ullam neque placeat libero ipsam ipsa qui necessitatibus illo, quasi dolore atque repudiandae, unde optio pariatur? Fuga, ratione a.
-          </p>
+          </p> */}
         </div>
         <div className='col-4'>
           <div className=''>
