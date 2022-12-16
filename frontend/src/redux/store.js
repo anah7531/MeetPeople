@@ -3,6 +3,7 @@ import { acceuilSliceReducer } from "./acceuilSlice/acceuilSlice";
 import { authSliceReducer } from "./authSlice/authSlice";
 import { conversationSliceReducer } from "./conversationSlice/conversationSlice";
 import { matchSliceReducer } from "./matchSlice/matchSlice";
+import { profileSliceReducer } from "./profilSlice/profileSlice";
 
 
 export const store = configureStore({
@@ -10,7 +11,8 @@ export const store = configureStore({
         authSlice : authSliceReducer,
         matchSlice : matchSliceReducer,
         conversationSlice : conversationSliceReducer,
-        acceuilSlice : acceuilSliceReducer
+        acceuilSlice : acceuilSliceReducer, 
+        profileSlice : profileSliceReducer
 
     }
 })

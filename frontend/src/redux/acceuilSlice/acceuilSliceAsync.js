@@ -17,5 +17,15 @@ export const acceuilSliceAsync = {
             }
 
         }
+    },
+
+    likeOrDislike(data){
+        return async(dispatch, getState)=>{
+            const response = await Api.likeOrDislike(data)
+
+            if(response.status === 200){
+                dispatch(acceuilSliceAction.removeCurrentProfile())
+            }
+        }
     }
 }

@@ -9,7 +9,8 @@ import Matchs from './pages/Matchs/Matchs';
 import { Provider } from 'react-redux';
 import { store } from './redux/store';
 import AccueilMembre from './pages/AcceuilMembre/AccueilMembre';
-import SignalerProfil from './pages/SignalerProfil';
+import SignalerProfil from './pages/signalerProfile/SignalerProfil';
+import ProfilDetailler from './pages/profilDetailler/ProfilDetailler';
 
 export function App(){
 
@@ -24,15 +25,15 @@ export function App(){
 
           <Route element={<MainLayout />}>
             <Route path='/' element={<AccueilMembre />} />
-            <Route path='/signalerprofil' element={<SignalerProfil />} />
-            <Route path='/conversation' element={<Conversation />} />
-            <Route path='/matchs' element={<Matchs />} />
-            <Route path='/matchs' element={<Matchs />} />
+            <Route path='/signaler' element={<SignalerProfil />} />
             <Route path='/message/:id' element={<Conversation />} />
+            <Route path='/matchs' element={<Matchs />} />
+            <Route path='/matchs' element={<Matchs />} />
+            <Route path='/profile/:id' element={<ProfilDetailler />} />
+            <Route path='/profile/:id/signaler' element={<SignalerProfil />} />
           </Route> 
         </Routes>
       </Router>
     </Provider>
-
   )
 }

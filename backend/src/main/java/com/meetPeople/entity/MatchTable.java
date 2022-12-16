@@ -7,7 +7,8 @@ import jakarta.persistence.Table;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 
-import java.sql.Date;
+import java.util.Date;
+
 
 @Entity
 @Table(name = "MatchTable")

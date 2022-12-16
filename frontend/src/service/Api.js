@@ -33,4 +33,16 @@ export class Api{
         return fetch(this.BASE_URL + "/message", postOption(data))
     }
 
+    static likeOrDislike(data){
+        return fetch(this.BASE_URL + "/match", postOption(data))
+    }
+
+    static getProfile(id){
+        return fetch(this.BASE_URL + "/profile/" + id)
+    }
+
+    static sendPlainte(data){
+        return fetch(this.BASE_URL + "/plainte", postOption(data))
+    }
+
 }

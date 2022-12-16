@@ -1,15 +1,27 @@
 import React, {useState, useEffect} from 'react'
-import { useDispatch } from 'react-redux';
+import { useDispatch, useSelector } from 'react-redux';
 import { acceuilSlice, acceuilSliceAction } from '../../redux/acceuilSlice/acceuilSlice';
+import { acceuilSliceAsync } from '../../redux/acceuilSlice/acceuilSliceAsync';
 import { Api } from '../../service/Api';
 import { util } from '../../util/util';
 
 function CarteProfil({profile}) {
 
+    const {loginId} = useSelector(state => state.authSlice)
     const dispatch = useDispatch()
 
     const next = ()=>{
         dispatch(acceuilSliceAction.nextProfile())
+    }
+
+    const onLike = ()=>{
+        const data = {
+            idMembreInitiateur : loginId,
+            idMembreSecond : profile.idMembre,
+            estAimerParInitiateur : true
+        }
+
+        dispatch(acceuilSliceAsync.likeOrDislike(data))
     }
 
     return (
@@ -27,7 +39,7 @@ function CarteProfil({profile}) {
             <div className='mt-3'>
 
             <button className='btn btn-danger rounded-5 px-4 me-2'  variant="danger">J'aime pas</button>
-            <button className='btn color-like text-white rounded-5 px-4 ms-2' >J'aime</button> 
+            <button className='btn color-like text-white rounded-5 px-4 ms-2' onClick={onLike} >J'aime</button> 
             </div>
         </div>
     </div> 

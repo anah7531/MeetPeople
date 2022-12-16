@@ -25,5 +25,10 @@ public class ProfileController {
         return profileService.getAvailableProfile(id);
     }
 
+    @GetMapping("/{id}")
+    public Profile getProfile(@PathVariable int id){
+        return profileService.getShortProfile(id);
+    }
+
 
 }

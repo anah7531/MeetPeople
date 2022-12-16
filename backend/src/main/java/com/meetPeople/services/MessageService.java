@@ -36,5 +36,6 @@ public class MessageService {
         Profile profile = profileService.getShortProfile(userId);
         List<Message> messages = messageRepository.getConversation(myId, userId);
         return new Conversation(profile, messages);
+
     }
 }
