@@ -36,8 +36,34 @@ public class MatchService {
     public boolean isMatch(int myId, int otherUserId){
         MatchTable match1 = matchTableRepository.findById(new MatchTablePk(myId, otherUserId)).orElse(null);
 
-        return match1 != null && match1.getEstAimerParInitiateur() && match1.getEstAimerParSecond();
+        if(match1 == null)
+            return  false;
+
+        Boolean aimerInitiateur = match1.getEstAimerParInitiateur();
+        Boolean aimerSecond = match1.getEstAimerParSecond();
+
+        return aimerInitiateur != null && aimerInitiateur && aimerSecond != null && aimerSecond;
+
     }
+
+    //True or False if they have both matched
+ /*   public  boolean onClickForLikeOrNot(int idMembreInitiateur, int idMembreSecond, Boolean estAimerParInitiateur){
+        if(matchTableRepository.srchPrevLikeOrNotLikeBetween2Mems(idMembreInitiateur, idMembreSecond).isEmpty()) {
+            //list empty -> no records -> Insert 2 rows
+            matchTableRepository.insertLike(idMembreInitiateur, idMembreSecond, estAimerParInitiateur);
+            //One person has liked the other but since list was empty rigt before insert then there's no match for now
+            return false;
+        } else {
+            //list has records -> records found -> Update 2 rows
+            matchTableRepository.updateMatchInitiateur(idMembreInitiateur, idMembreSecond, estAimerParInitiateur);
+            matchTableRepository.updateMatchSecond(idMembreInitiateur, idMembreSecond, estAimerParInitiateur);
+            if(isMatch(idMembreInitiateur, idMembreSecond ) && isMatch(idMembreSecond , idMembreInitiateur ) ){
+                //If they both have liked each other, then return true
+                return true;
+            }
+            else return false;
+        }
+    }//onClickForLikeOrNot*/
 
 
     //returns 2 if the records are inserted and returns 1 if there was an update

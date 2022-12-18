@@ -25,5 +25,11 @@ public class ProfileController {
         return profileService.getAvailableProfile(id);
     }
 
+    @GetMapping("/detailProfil/{myId}/{potentialMatchId}")
+    public Profile showMatchDetailedProfile(@PathVariable int myId, @PathVariable int potentialMatchId){
+        return profileService.showMatchDetailedProfile(myId, potentialMatchId);
+    }
+
+
 
 }

@@ -30,6 +30,20 @@ public interface MatchTableRepository extends JpaRepository<MatchTable, MatchTab
     )
     List<Integer> getMyMatchesId(int id);
 
+    //Retourne l'ID du membreSecond s'ils ont match, Retourne null si n'ont pas match
+    @Query(
+            nativeQuery = true,
+            value =
+                    "SELECT * " +
+                            "FROM matchTable " +
+                            "WHERE idMembreInitiateur = :idMembreInitiateur " +
+                            "AND idMembreSecond= :idMembreSecond "+
+                            "AND estAimerParInitiateur = 1 " +
+                            "AND estAimerParSecond = 1 "
+
+    )
+    Integer haveTheyMatched(int idMembreInitiateur, int idMembreSecond);
+
     @Query(
             nativeQuery = true,
             value =

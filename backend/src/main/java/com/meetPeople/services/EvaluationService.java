@@ -21,11 +21,6 @@ public class EvaluationService {
     @Autowired
     MatchService matchService;
 
-    /*public boolean hasAlreadyEvaluatedMember(int idMembreEvaluateur, int idMembreEvalue){
-        Evaluation evaluation = evaluationRepository.findById(idMembreEvaluateur, idMembreEvalue).orElse(null);
-
-        return match1 != null && match1.getEstAimerParInitiateur() && match1.getEstAimerParSecond();
-    }*/
     @Transactional
     public boolean saveEvaluation(Evaluation evaluation){
         boolean haveMatched = matchService.isMatch(evaluation.getIdMembreEvaluateur(), evaluation.getIdMembreEvalue());
@@ -38,7 +33,7 @@ public class EvaluationService {
         //ET quand une évaluation n'a pas été encore faites.
         if (haveMatched && evaluationList.isEmpty()){
             evaluation.setIdEvaluation(0);
-            evaluation.setDate(new Date());
+            evaluation.setDate((java.sql.Date) new Date());
             evaluationRepository.save(evaluation);
 
             return true;

@@ -3,7 +3,7 @@ package com.meetPeople.entity;
 import jakarta.persistence.*;
 import lombok.Data;
 import lombok.NoArgsConstructor;
-import java.util.Date;
+import java.sql.Date;
 
 @Entity
 @Table(name = "evaluation")

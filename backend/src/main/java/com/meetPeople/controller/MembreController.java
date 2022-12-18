@@ -3,6 +3,7 @@ package com.meetPeople.controller;
 
 import com.meetPeople.repository.MembreRepository;
 import com.meetPeople.entity.Membre;
+import com.meetPeople.services.MembreService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
@@ -17,6 +18,9 @@ public class MembreController {
     @Autowired
     MembreRepository membreRepository;
 
+    @Autowired
+    MembreService membreService;
+
 
     @GetMapping("{id}")
     public Optional<Membre> show(@PathVariable int id){
@@ -28,5 +32,6 @@ public class MembreController {
         return membreRepository.save(membre);
 
     }
+
 
 }
