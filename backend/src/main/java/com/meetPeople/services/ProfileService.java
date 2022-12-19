@@ -66,7 +66,7 @@ public class ProfileService {
 
     }
 
-    public List<Profile> showAvailableProfileByAge (int idMemberLooking, int ageMin, int ageMax){
+    public List<Profile> showAvailableProfilesByAge(int idMemberLooking, int ageMin, int ageMax){
         List<Profile> profilesList = getAvailableProfile(idMemberLooking);
         List<Profile> profilesWAgeWanted = new ArrayList<>();
 
@@ -85,11 +85,19 @@ public class ProfileService {
         return profilesWAgeWanted;
     }
 
-    public Profile showAvailableProfileByGender (){
+    public List<Profile> showAvailableProfilesByGender (int idMemberLooking, String genderWanted){
+        List<Profile> profilesList = getAvailableProfile(idMemberLooking);
+        List<Profile> profilesWGenderWanted = new ArrayList<>();
 
+        for (Profile profile: profilesList
+        ) {
+            if( profile.getSexe().equals(genderWanted.toUpperCase())){
+                profilesWGenderWanted.add(profile);
+            }
+        }
 
-
-        return null;
+        //returns gender wanted short profiles
+        return profilesWGenderWanted;
     }
 
     public Profile showMatchDetailedProfile(int myId, int potentialMatchId){

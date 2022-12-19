@@ -1,10 +1,6 @@
 package com.meetPeople.controller;
 
-import com.meetPeople.entity.MatchTable;
-import com.meetPeople.entity.Membre;
 import com.meetPeople.model.Profile;
-import com.meetPeople.repository.MatchTableRepository;
-import com.meetPeople.repository.MembreRepository;
 import com.meetPeople.services.ProfileService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
@@ -37,8 +33,12 @@ public class ProfileController {
 
     @GetMapping("/searchByAge/{idMemberLooking}/{ageMin}/{ageMax}")
     public List<Profile> showAvailableProfileByAge (@PathVariable int idMemberLooking,@PathVariable int ageMin,@PathVariable int ageMax){
-        return profileService.showAvailableProfileByAge(idMemberLooking,ageMin,ageMax);
+        return profileService.showAvailableProfilesByAge(idMemberLooking,ageMin,ageMax);
     }
 
+    @GetMapping("/searchByGender/{idMemberLooking}/{genderWanted}")
+    public List<Profile> showAvailableProfilesByGender (@PathVariable int idMemberLooking,@PathVariable String genderWanted){
+        return profileService.showAvailableProfilesByGender(idMemberLooking,genderWanted);
+    }
 
 }
