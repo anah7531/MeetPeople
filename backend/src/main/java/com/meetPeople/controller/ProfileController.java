@@ -35,5 +35,10 @@ public class ProfileController {
         return profileService.showMatchDetailedProfile(myId, potentialMatchId);
     }
 
+    @GetMapping("/searchByAge/{idMemberLooking}/{ageMin}/{ageMax}")
+    public List<Profile> showAvailableProfileByAge (@PathVariable int idMemberLooking,@PathVariable int ageMin,@PathVariable int ageMax){
+        return profileService.showAvailableProfileByAge(idMemberLooking,ageMin,ageMax);
+    }
+
 
 }
