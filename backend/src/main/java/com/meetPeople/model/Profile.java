@@ -1,10 +1,12 @@
 package com.meetPeople.model;
 
+import com.meetPeople.entity.Evaluation;
 import lombok.Builder;
 import lombok.Data;
 import lombok.ToString;
 
 import java.sql.Date;
+import java.util.List;
 
 @Data
 @Builder
@@ -21,5 +23,10 @@ public class Profile {
     private Integer idSituationFamiliale;
     private Integer idInteret;
     private String photoProfil;
+
+    private int age;
+    private double evaluationGlobale;
+    private List<String> photoList;
+    private List <Evaluation> evaluationList;
 
 }

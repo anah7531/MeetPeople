@@ -35,6 +35,19 @@ public interface MatchTableRepository extends JpaRepository<MatchTable, MatchTab
             value =
                     "SELECT * " +
                             "FROM matchTable " +
+                            "WHERE idMembreInitiateur = :idMembreInitiateur " +
+                            "AND idMembreSecond= :idMembreSecond "+
+                            "AND estAimerParInitiateur = 1 " +
+                            "AND estAimerParSecond = 1 "
+
+    )
+    Integer haveTheyMatched(int idMembreInitiateur, int idMembreSecond);
+
+    @Query(
+            nativeQuery = true,
+            value =
+                    "SELECT * " +
+                            "FROM matchTable " +
                             "WHERE idMembreInitiateur = :idMembreInitiateur "+
                             "AND idMembreSecond = :idMembreSecond "+
                             "OR (idMembreInitiateur= :idMembreSecond " +
