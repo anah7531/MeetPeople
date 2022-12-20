@@ -66,6 +66,40 @@ public class ProfileService {
 
     }
 
+    public List<Profile> showAvailableProfilesByAge(int idMemberLooking, int ageMin, int ageMax){
+        List<Profile> profilesList = getAvailableProfile(idMemberLooking);
+        List<Profile> profilesWAgeWanted = new ArrayList<>();
+
+        LocalDate currentDate = LocalDate.now();
+        int currentYear = currentDate.getYear();
+
+        for (Profile profile: profilesList
+             ) {
+                    int ageWanted = currentYear - (profile.getDateDeNaissance().getYear()+ 1900);
+
+                    if( ageWanted >= ageMin && ageWanted <= ageMax){
+                        profilesWAgeWanted.add(profile);
+                    }
+        }
+        //returns age wanted short profiles
+        return profilesWAgeWanted;
+    }
+
+    public List<Profile> showAvailableProfilesByGender (int idMemberLooking, String genderWanted){
+        List<Profile> profilesList = getAvailableProfile(idMemberLooking);
+        List<Profile> profilesWGenderWanted = new ArrayList<>();
+
+        for (Profile profile: profilesList
+        ) {
+            if( profile.getSexe().equals(genderWanted.toUpperCase())){
+                profilesWGenderWanted.add(profile);
+            }
+        }
+
+        //returns gender wanted short profiles
+        return profilesWGenderWanted;
+    }
+
     public Profile showMatchDetailedProfile(int myId, int potentialMatchId){
         //If they have matched returns potentialMatchId if they don't match returns null
         Integer matchId = matchTableRepository.haveTheyMatched(myId, potentialMatchId);
