@@ -15,6 +15,7 @@ import { situationFamilialeOptions } from "./situationFamilialeOptions";
 import { registerSchema } from "./registerSchema";
 import { TextArea } from "../../components/TextArea";
 import { Api } from "../../service/Api";
+import { Link } from "react-router-dom";
 
 
 const CreerCompte = () => {
@@ -56,7 +57,7 @@ const CreerCompte = () => {
             <form className="row g-3" onSubmit={ handleSubmit(postData) }>
                 <div className="col-12 text-center">
                     <h5>Créer compte</h5>
-                    <p>Vous avez un compte? <a href="#" className="colorlettre text-decoration-none">Connectez-vous ici</a></p>
+                    <p>Vous avez un compte? <Link to="/" className="colorlettre text-decoration-none">Connectez-vous ici</Link></p>
                 </div>
                 <InputText label="Nom" columnSize="col-6" formControl={register("nom")} errorMessage={errors.nom?.message} />
                 <InputText label="Prenom" columnSize="col-6" formControl={register("prenom")} errorMessage={errors.prenom?.message} />

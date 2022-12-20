@@ -45,4 +45,7 @@ export class Api{
         return fetch(this.BASE_URL + "/plainte", postOption(data))
     }
 
+    static login(data){
+        return fetch(this.BASE_URL + "/login", postOption(data))
+    }
 }
