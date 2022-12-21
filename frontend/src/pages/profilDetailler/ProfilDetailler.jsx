@@ -7,12 +7,15 @@ import { util } from '../../util/util'
 const ProfilDetailler = () => {
   const {id} = useParams()
   const {profile} = useSelector(state => state.profileSlice)
+  const {loginId} = useSelector(state => state.authSlice)
+
+  console.log(profile)
   
 
   const dispatch = useDispatch()
 
   useEffect(()=>{
-    dispatch(profileSliceAsync.getProfile(id))
+    dispatch(profileSliceAsync.getProfile(loginId, id))
   }, [])
 
   return (
@@ -25,13 +28,13 @@ const ProfilDetailler = () => {
           <div className='fs-4'>{profile.prenom + " " + profile.nom}</div>
           <div><b>Sexe : </b>{util.getSexeValue(profile.sexe)}</div>
           <div><b>Âge : </b>{util.formatToAge(profile.dateDeNaissance)} ans</div>
-          <div><b>Taille : </b>178 cm</div>
-          <div><b>Situation familiale : </b>A des enfants</div>
-          <div><b>Recherche : </b>Relation sérieuse</div>
+          <div><b>Taille : </b>{profile.grandeur} cm</div>
+          <div><b>Situation familiale : </b>{util.getSituationFamilialeValue(profile.idSituationFamiliale)}</div>
+          <div><b>Recherche : </b>{util.getInteretValue(profile.idInteret)}</div>
           
           <div className='d-flex mt-2'>
-              <button className='btn btn-outline-primary'>Envoyé message</button>
-              <button className='ms-2 btn btn-outline-secondary'>Évaluer profile</button>
+              <Link to={`/message/${id}`} className='btn btn-outline-primary'>Envoyer message</Link>
+              <Link to={`/profile/${id}/evaluer`} className='ms-2 btn btn-outline-secondary'>Évaluer profile</Link>
           </div>
         
         </div>
@@ -44,10 +47,8 @@ const ProfilDetailler = () => {
 
       <div className='row py-4'>
         <div className='col-8'>
-          {/* <h5>À propos de moi</h5>
-          <p>
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. Quos culpa, debitis ullam neque placeat libero ipsam ipsa qui necessitatibus illo, quasi dolore atque repudiandae, unde optio pariatur? Fuga, ratione a.
-          </p> */}
+          <h5>À propos de moi</h5>
+          <p>{profile.detailProfil}</p>
         </div>
         <div className='col-4'>
           <div className=''>

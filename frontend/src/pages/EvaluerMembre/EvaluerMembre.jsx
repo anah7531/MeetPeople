@@ -1,15 +1,21 @@
 import React, { useState } from 'react'
-import { useSelector } from 'react-redux'
-import { useNavigate } from 'react-router'
+import { useDispatch, useSelector } from 'react-redux'
+import { useNavigate, useParams } from 'react-router'
 import { TextArea } from '../../components/TextArea'
+import { profileSliceAsync } from '../../redux/profilSlice/profileSliceAsync'
 import { util } from '../../util/util'
 import StarsRating from '../EvaluerMembre/starsRating'
 
 const SignalerProfil = () => {
 
   const {profile} = useSelector(state => state.profileSlice)
+  const {loginId} = useSelector(state => state.authSlice)
+  const {id} = useParams()
+
   const [text, setText] = useState("")
+  const [rating, setRating] = useState(null);
   const navigate = useNavigate()
+  const dispatch = useDispatch()
   const [confirmation, setConfirmation] = useState(false)
   const {nom, prenom, dateDeNaissance, sexe, grandeur, photoProfil} = profile
   const formControl = {
@@ -20,8 +26,17 @@ const SignalerProfil = () => {
   const onClick = (e)=>{
     e.preventDefault()
 
-    if(text !== "")
-      setConfirmation(true)
+    if(text !== "" && rating){
+      const evaluation = {
+        note : rating,
+        description : text,
+        idMembreEvaluateur : loginId,
+        idMembreEvalue : id
+      }
+
+      console.log(evaluation)
+      dispatch(profileSliceAsync.sendEvaluation(evaluation, ()=> navigate(-1)))
+    }
   }
 
   const navigateBack = (e)=>{
@@ -50,7 +65,7 @@ const SignalerProfil = () => {
       </div>
       <div className='mt-5 row justify-content-center'>
         <form className='col-8 justify-content-center'>
-          <StarsRating />
+          <StarsRating rating={rating} setRating={setRating} />
           <TextArea label="Évaluer ce profil" formControl={formControl} />
           <div className='text-center mt-3'>
             <button className='mx-2 btn colorBtn text-white rounded-5' onClick={navigateBack}>Retour au profil</button>

@@ -1,10 +1,9 @@
 import React, { useState } from "react";
 import { FaStar } from 'react-icons/fa';
 
-const StarsRating = () => {
+const StarsRating = ({rating, setRating}) => {
 
     const star = Array(5).fill(0);
-    const [rating, setRating] = useState(null);
     const [hover, setHover] = useState(null);
 
     return (
@@ -13,7 +12,7 @@ const StarsRating = () => {
                 const ratingValue = i + 1;
 
                 return (
-                    <label>
+                    <label key={i}>
                         <input
                             type="radio"
                             name="rating"

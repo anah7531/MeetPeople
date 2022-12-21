@@ -30,13 +30,13 @@ export function App(){
           <Route element={<MainLayout />}>
             <Route path='/' element={<AccueilMembre />} />
             <Route path='/boitemessage' element={<BoiteMessage />} />
-            <Route path='/evaluer' element={<EvaluerMembre />} />
             <Route path='/signaler' element={<SignalerProfil />} />
             <Route path='/message/:id' element={<Conversation />} />
             <Route path='/matchs' element={<Matchs />} />
             <Route path='/matchs' element={<Matchs />} />
             <Route path='/profile/:id' element={<ProfilDetailler />} />
             <Route path='/profile/:id/signaler' element={<SignalerProfil />} />
+            <Route path='/profile/:id/evaluer' element={<EvaluerMembre />} />
           </Route> 
         </Routes>
       </Router>

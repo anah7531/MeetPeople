@@ -38,8 +38,8 @@ export class Api{
         return fetch(this.BASE_URL + "/match", postOption(data))
     }
 
-    static getProfile(id){
-        return fetch(this.BASE_URL + "/profile/" + id)
+    static getProfile(myId, id){
+        return fetch(this.BASE_URL + `/profile/detailProfil/${myId}/${id}`)
     }
 
     static sendPlainte(data){
@@ -48,5 +48,13 @@ export class Api{
 
     static login(data){
         return fetch(this.BASE_URL + "/auth/login", postOption(data))
+    }
+
+    static sendEvaluation(data){
+        return fetch(this.BASE_URL + "/evaluation/saveEvaluation", postOption(data))
+    }
+
+    static getInbox(myId){
+        return fetch(this.BASE_URL + "/message/" + myId)
     }
 }

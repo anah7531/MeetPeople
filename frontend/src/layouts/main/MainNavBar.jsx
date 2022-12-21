@@ -14,7 +14,7 @@ export function MainNavBar(){
                 </li>
                 <li className="liStyle"><Link to='/' className="ms-4 text-decoration-none link-hover d-none d-md-inline">Accueil</Link></li>
                 <li className="liStyle"><Link className="ms-4 text-decoration-none link-hover">Mon profil</Link></li>
-                <li className="liStyle"><Link className="ms-4 text-decoration-none link-hover">Messages</Link></li>
+                <li className="liStyle"><Link to="/boitemessage" className="ms-4 text-decoration-none link-hover">Messages</Link></li>
                 <li className="liStyle"><Link to='/matchs' className="ms-4 text-decoration-none link-hover">Matchs</Link></li>
             </ul>
             <button className="btn colorBtn rounded-5 text-white btnDeconnecter">Me déconnecter</button>

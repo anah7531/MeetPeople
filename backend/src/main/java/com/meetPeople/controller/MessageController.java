@@ -31,8 +31,8 @@ public class MessageController extends BaseController {
         return messageService.getConversation(id, userId);
     }
 
-    @GetMapping
-    public List<InboxMessage> getInbox(){
-        return messageService.getInbox(super.getMyId());
+    @GetMapping("{id}")
+    public List<InboxMessage> getInbox(@PathVariable int id){
+        return messageService.getInbox(id);
     }
 }
