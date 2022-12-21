@@ -26,6 +26,10 @@
     color: #A87FF3;
 }
 
+.colorlettre:hover{
+    color: #6a18f6;
+}
+
 .colorBtn{
     background-color: #925FF0;
 }
@@ -150,3 +154,8 @@
     width: 25px;
 }
 
+/* Stars */
+
+.star{
+    display: none;
+}

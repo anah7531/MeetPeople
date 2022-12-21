@@ -5,7 +5,8 @@ function postOption(data){
         headers: {
             'content-type': 'application/json'
         },
-        body: JSON.stringify(data)
+        body: JSON.stringify(data),
+       
     }
 }
 
@@ -45,4 +46,7 @@ export class Api{
         return fetch(this.BASE_URL + "/plainte", postOption(data))
     }
 
+    static login(data){
+        return fetch(this.BASE_URL + "/auth/login", postOption(data))
+    }
 }

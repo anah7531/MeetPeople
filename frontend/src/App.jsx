@@ -11,6 +11,9 @@ import { store } from './redux/store';
 import AccueilMembre from './pages/AcceuilMembre/AccueilMembre';
 import SignalerProfil from './pages/signalerProfile/SignalerProfil';
 import ProfilDetailler from './pages/profilDetailler/ProfilDetailler';
+import Login from './pages/Login/Login';
+import EvaluerMembre from './pages/EvaluerMembre/EvaluerMembre';
+import BoiteMessage from './pages/BoiteMessage/BoiteMessage';
 
 export function App(){
 
@@ -20,11 +23,14 @@ export function App(){
         <Routes>
           
           <Route element={<AuthLayout />}>
+            <Route path='/login' element={<Login />} />
             <Route path='/register' element={<CreerCompte />} />
           </Route>
 
           <Route element={<MainLayout />}>
             <Route path='/' element={<AccueilMembre />} />
+            <Route path='/boitemessage' element={<BoiteMessage />} />
+            <Route path='/evaluer' element={<EvaluerMembre />} />
             <Route path='/signaler' element={<SignalerProfil />} />
             <Route path='/message/:id' element={<Conversation />} />
             <Route path='/matchs' element={<Matchs />} />

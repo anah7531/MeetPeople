@@ -18,10 +18,6 @@ public class EvaluationService {
     @Autowired
     MatchService matchService;
 
-    /*public boolean hasAlreadyEvaluatedMember(int idMembreEvaluateur, int idMembreEvalue){
-        Evaluation evaluation = evaluationRepository.findById(idMembreEvaluateur, idMembreEvalue).orElse(null);
-        return match1 != null && match1.getEstAimerParInitiateur() && match1.getEstAimerParSecond();
-    }*/
     @Transactional
     public boolean saveEvaluation(Evaluation evaluation){
         boolean haveMatched = matchService.isMatch(evaluation.getIdMembreEvaluateur(), evaluation.getIdMembreEvalue());

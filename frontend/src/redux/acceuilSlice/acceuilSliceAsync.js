@@ -6,9 +6,6 @@ export const acceuilSliceAsync = {
 
     getMatchs(id){
         return async(dispatch, getState)=>{
-
-            dispatch(acceuilSliceAction.isLoading(true))
-
             const response = await Api.getAvailableProfile(id)
 
             if(response.status === 200){
@@ -21,6 +18,8 @@ export const acceuilSliceAsync = {
 
     likeOrDislike(data){
         return async(dispatch, getState)=>{
+            dispatch(acceuilSliceAction.isLoading(true))
+
             const response = await Api.likeOrDislike(data)
 
             if(response.status === 200){

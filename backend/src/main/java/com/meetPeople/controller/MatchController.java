@@ -12,7 +12,7 @@ import java.util.Map;
 
 @RestController
 @RequestMapping("/match")
-@CrossOrigin("*")
+@CrossOrigin(origins = "*")
 public class MatchController {
 
     @Autowired
@@ -23,7 +23,7 @@ public class MatchController {
         return matchService.getMyMatches(id);
     }
 
-    @PostMapping()
+    @PostMapping
     public Map onClickForLikeOrNot(@RequestBody MatchTable matchTable){
         return matchService.onClickForLikeOrNot(matchTable);
     }

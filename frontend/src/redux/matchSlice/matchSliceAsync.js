@@ -6,6 +6,7 @@ export const matchSliceAsync = {
     getMatchs : (id) => async (dispatch, getState)=>{
         dispatch(matchSliceActions.updateLoading(true))
 
+
         const response = await Api.getMatchsById(id)
 
         if(response.status === 200){
