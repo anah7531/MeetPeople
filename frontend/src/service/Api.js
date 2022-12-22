@@ -48,4 +48,8 @@ export class Api{
     static login(data){
         return fetch(this.BASE_URL + "/login", postOption(data))
     }
+
+    static filtre(data){
+        return fetch(this.BASE_URL + "/filtre", postOption(data))
+    }
 }

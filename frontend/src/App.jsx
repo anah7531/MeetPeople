@@ -28,7 +28,7 @@ export function App(){
           </Route>
 
           <Route element={<MainLayout />}>
-            <Route path='/' element={<AccueilMembre />} />
+            <Route path='/accueil' element={<AccueilMembre />} />
             <Route path='/boitemessage' element={<BoiteMessage />} />
             <Route path='/evaluer' element={<EvaluerMembre />} />
             <Route path='/signaler' element={<SignalerProfil />} />

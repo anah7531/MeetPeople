@@ -158,4 +158,41 @@
 
 .star{
     display: none;
+    
+}
+
+/* FILTRE */
+
+.titre-sexe { 
+    margin-left: 50px;
+    font-weight: 700;
+
+}
+.titre-age { 
+    margin-left: 50px;
+    font-weight: 700;
+    /* margin-top: 10px;
+    margin-bottom: 20px; */
+
+}
+
+.radio-sexe {
+    width: 200px;
+    margin-left: 80px;
+    
+
+}
+
+.titre-recherche {
+    font-weight: 800;
+    margin-top: 10px;
+   
+  
+}
+
+
+.radio-age {
+    width: 250px;
+    margin-top: 10px;
+    margin-left: 80px;
 }
