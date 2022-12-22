@@ -57,4 +57,12 @@ export class Api{
     static getInbox(myId){
         return fetch(this.BASE_URL + "/message/" + myId)
     }
+
+    static getAvailableProfileBySexe(myId, sexe){
+        return fetch(this.BASE_URL + `/profile/searchByGender/${myId}/${sexe}`)
+    }
+
+    static getAvailableProfileByAge(myId, ageMin, ageMax){
+        return fetch(this.BASE_URL + `/profile/searchByAge/${myId}/${ageMin}/${ageMax}`)
+    }
 }
