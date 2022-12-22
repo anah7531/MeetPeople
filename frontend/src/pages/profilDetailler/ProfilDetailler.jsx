@@ -3,14 +3,14 @@ import { useDispatch, useSelector } from 'react-redux'
 import { Link, useParams } from 'react-router-dom'
 import { profileSliceAsync } from '../../redux/profilSlice/profileSliceAsync'
 import { util } from '../../util/util'
+import { CarouselEvaluation } from './CarouselEvaluation'
+import { CarourelPhoto } from './CarouselPhoto'
+import { RatingStar } from './RatingStar'
 
 const ProfilDetailler = () => {
   const {id} = useParams()
   const {profile} = useSelector(state => state.profileSlice)
   const {loginId} = useSelector(state => state.authSlice)
-
-  console.log(profile)
-  
 
   const dispatch = useDispatch()
 
@@ -47,18 +47,13 @@ const ProfilDetailler = () => {
 
       <div className='row py-4'>
         <div className='col-8'>
+          <p className='text-end fs-5'><b>Evaluation : </b> <RatingStar value={profile.evaluationGlobale} /></p>
           <h5>À propos de moi</h5>
           <p>{profile.detailProfil}</p>
         </div>
         <div className='col-4'>
-          <div className=''>
-            <p className='text-center'><b>Les évaluations</b></p>
-            <p className='text-center'>Aucune évaluation</p>
-          </div>
-          <div>
-            <p className='text-center'><b>Les Photos</b></p>
-            <p className='text-center'>Aucune Photo à afficher</p>
-          </div>
+          <CarouselEvaluation evaluations={profile.evaluationList} />
+          <CarourelPhoto photoList={profile.photoList} />
         </div>
 
       </div>

@@ -17,7 +17,7 @@ const SignalerProfil = () => {
   const navigate = useNavigate()
   const dispatch = useDispatch()
   const [confirmation, setConfirmation] = useState(false)
-  const {nom, prenom, dateDeNaissance, sexe, grandeur, photoProfil} = profile
+  const {nom, prenom, dateDeNaissance, sexe, grandeur, photoProfil, idSituationFamiliale, idInteret} = profile
   const formControl = {
     value : text,
     onChange : (e)=>setText(e.target.value)
@@ -44,8 +44,6 @@ const SignalerProfil = () => {
     navigate(-1)
   }
 
-  /* if(confirmation)
-    return <SignalerProfilConfirmer contenu={text} annuler={()=>setConfirmation(false)} /> */
 
   return (
 
@@ -59,8 +57,8 @@ const SignalerProfil = () => {
             <div><b>Sexe : </b>{util.getSexeValue(sexe)}</div>
             <div><b>Âge : </b>{util.formatToAge(dateDeNaissance)} ans</div>
             <div><b>Taille : </b>{grandeur} cm</div>
-            <div><b>Situation familiale : </b>A des enfants</div>
-            <div><b>Recherche : </b>Relation sérieuse</div>
+            <div><b>Situation familiale : </b>{util.getSituationFamilialeValue(idSituationFamiliale)}</div>
+            <div><b>Recherche : </b>{util.getInteretValue(idInteret)}</div>
         </div>
       </div>
       <div className='mt-5 row justify-content-center'>
